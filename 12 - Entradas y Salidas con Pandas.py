@@ -85,6 +85,7 @@ competidor_ganador_RUS = competidor_ganador_RUS.groupby(["NOC",'Name']).Medal.co
 
 
 #CSVs
+#path_res = '/dbfs/mnt/dpo/AI_Factory/MonterreyDigitalHub/Resultados/lfelipelopezp/Modulo 12 - Actividad Competidores Olimpicos/athlete_events.csv'
 #competidor_ganador_USA.to_csv(path_res)
 #competidor_ganador_CHN.to_csv(path_res)
 #competidor_ganador_RUS.to_csv(path_res)
