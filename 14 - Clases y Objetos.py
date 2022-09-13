@@ -44,8 +44,8 @@ class calculadora ():
         return potencia
         
         
-n_1 = 2
-n_2 = 3
+n_1 = 4
+n_2 = 16
         
 calculos = calculadora(n_1,n_2)
 print(f'- Los numeros ingresados son: {n_1} y {n_2}. \n- La suma es {calculos.suma()}, la resta es {calculos.resta()}, la multiplicación es {calculos.multi()} y la división es {calculos.div()}. \n- Las raíces cuadradas son {calculos.sqr()[0]} y {calculos.sqr()[1]} respectivamente.\n- {n_1} elevado a la {n_2}° potencia es {calculos.potencia()}.')
