@@ -10,7 +10,7 @@ import pandas as pd
 
 path = '/dbfs/mnt/dpo/AI_Factory/MonterreyDigitalHub/Modulo 12 - Actividad Competidores Olimpicos/athlete_events.csv'
 df_Olimpicos = pd.read_csv(path)
-display(df_Olimpicos)
+#display(df_Olimpicos)
 
 # COMMAND ----------
 
