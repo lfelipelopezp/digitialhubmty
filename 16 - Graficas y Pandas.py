@@ -31,8 +31,21 @@ display(df_medallas_pais_TOP10)
 
 
 paises_medalleros = df_Olimpicos[['NOC','Medal']]
-paises_medalleros['NOC'].value_counts().head(10).plot(kind = 'bar', figsize = (12,5))
-
+paises_medalleros['NOC'].value_counts().head(10).sort_values(ascending = True).plot(kind = 'bar', figsize = (12,5))
 
 
 #Utilizar ".hist()"
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC ###Grafica Pay
+
+# COMMAND ----------
+
+df_MaxAños = df_Olimpicos[df_Olimpicos['Year'] == df_Olimpicos['Year'].max()]
+display(df_MaxAños)
+
+# COMMAND ----------
+
+graph_pay = df_MaxAños['NOC'].value_counts().head(10).plot(kind = 'pie')
