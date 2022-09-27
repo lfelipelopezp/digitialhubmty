@@ -105,3 +105,7 @@ print("\nSe exportaron los datos en CSV.")
 # COMMAND ----------
 
 competidor_veterano["Medal"].unique()
+
+# COMMAND ----------
+
+
