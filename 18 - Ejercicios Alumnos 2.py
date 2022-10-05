@@ -5,6 +5,7 @@
 # COMMAND ----------
 
 import pandas as pd
+import seaborn as sb
 
 path = '/dbfs/mnt/dpo/AI_Factory/MonterreyDigitalHub/Modulo 17 - Alumnos por grado/clean_students_complete.csv'
 df_alumnos = pd.read_csv(path)
@@ -39,3 +40,24 @@ print(df_EscuelaPuntajeReading_max[['school_name', 'grade', 'reading_score' ,'ge
 #Crea / Presenta un algoritmo que genere los datos de "reading_score" y "math_score", en variables categóricas, y guárdalo en dos columnas diferentes (cada columna nueva representa la nueva columna con variables categórica). 
 
 #Crea / Presenta una gráfica que condense la información obtenida ahora categóricamente mostrando que género obtuvo mejor puntaje.
+
+def categoricas(x):
+    if x < 60:
+        return "Reprobado"
+    elif x<75:
+        return "Panzazo"
+    else:
+        return "Excelente"
+
+df_calis = df_alumnos
+
+df_calis["categoricas_reading_score"] = df_calis["reading_score"].apply(categoricas)
+df_calis["categoricas_math_score"] = df_calis["math_score"].apply(categoricas)
+
+display(df_calis)
+
+# COMMAND ----------
+
+grafica_calis = df_calis.groupby(["gender","categoricas_reading_score","categoricas_math_score"]).agg({"student_name":"count"}).reset_index()
+
+sb.barplot(data=grafica_calis, x="categoricas_reading_score", y="student_name", hue="gender", palette = 'Spectral')
