@@ -60,5 +60,4 @@ display(df_calis)
 
 grafica_calis = df_calis.groupby(["gender","categoricas_reading_score","categoricas_math_score"]).agg({"student_name":"count"}).reset_index()
 
-sb.barplot(data=grafica_calis, x="categoricas_reading_score", y="student_name", hue="gender")
-
+sb.barplot(data=grafica_calis, x="categoricas_reading_score", y="student_name", hue="gender", palette = 'Spectral')
